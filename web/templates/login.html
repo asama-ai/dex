@@ -4,13 +4,13 @@
     {{ template "password.html" . }}
 
     {{ if gt (len .Connectors) 1 }}
-      <div style="display: flex; align-items: center; justify-content: center; pointer-events: none; width: 100%; height: 41px; flex: 0 0 auto;">   
-	      <div role="separator" style="width: 100%; height: 1px; visibility: visible; border-bottom: 1px solid rgba(227, 226, 224, 0.5);"></div>
+      <div class="separator-row">   
+	      <div role="separator" class="separator-line"></div>
       </div>
     {{ end }}
 
     {{ $connectorCount := len .Connectors }}
-        <div class="grid grid-cols-2" style="display: flex; grid-gap: 15px">
+        <div class="grid grid-cols-2 connector-row">
             {{ range $index, $c := .Connectors }}
                 {{ if ne $c.Type "local" }}
                     {{ $isLast := eq (add $index 1) $connectorCount }}
@@ -28,13 +28,8 @@
                             {{ if eq $c.Type "github" }}text-white hover:bg-gray-900{{ end }}
                             {{ if eq $c.Type "google" }}text-white hover:bg-red-600{{ end }}
                             {{ if eq $c.Type "microsoft" }}text-white hover:bg-blue-700{{ end }}
-                        "
-			    style="background-color: #FFFFFF;
-				   border-style: solid;
-				   border-color: #e8e8e8;
-				   border-radius: 5px;
-                  		   border-width: 1px;"
-			>
+                            connector-button-base
+                        ">
                             <span class="dex-btn-icon dex-btn-icon--{{ $c.Type }}"></span>
                             <span class="dex-btn-text">Log in with {{ $c.Name }}</span>
                         </button>

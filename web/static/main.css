@@ -188,3 +188,86 @@ input[type="checkbox"]:checked ~ .password-input-wrapper {
 .dex-error-box {
   margin: 20px auto;
 }
+
+/* Login / password form specific */
+.login-button {
+  border-radius: 5px;
+  background-color: #324f9b;
+  color: #fff;
+  padding: 11px 70px;
+  font: 700 20px/1 Inter, sans-serif;
+  border: none;
+  cursor: pointer;
+  margin-top: 27px;
+  width: 100%;
+}
+
+.form-label {
+  color: #1a1a1a;
+  font: 400 18px/1 Inter, sans-serif;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  border-width: 0;
+  border-radius: 5px;
+  background-color: rgba(191, 200, 224, 0.2);
+  height: 40px;
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+}
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #bfc8e0;
+  font: 400 14px/1 Inter, sans-serif;
+  margin-top: 10px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.account-text {
+  color: #1a1a1a;
+  margin-top: 35px;
+  margin-bottom: 0;
+  font: 400 16px/1 Inter, sans-serif;
+}
+
+.founders-link {
+  text-decoration: underline;
+  color: #324f9b;
+}
+
+.clickable-image:hover,
+.clickable-logo:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.error-message {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
